@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Barlow';
+        }
+        body{
+            margin: 0px;
+        }
+      h1{
+            margin: 0px;
+           
+            text-align: center;
+        }
+        ul{
+            margin: 0px;
+            padding-top: 5px;
+            display: flex;
+            list-style-type: none;
+        }
+        ul li{
+            cursor: pointer;
+            padding: left 20px;
+            justify-content: space-around;
+            padding-inline: 5px;
+            padding-top: inherit;
+        }
+        nav{
+            display: flex;
+            height: 50px;
+            background-color: #F8F9FA;
+            justify-content: flex-start;
+            align-items: start;
+        }
+        header{
+            background-color: #212529;
+            height: 297px;
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            
+        }
+        #header h1{
+            font-size: 3.5rem;
+            font-weight: bolder
+        }
+        h3{
+        opacity:1;
+        color: rgba(255, 255, 255, 0.5);
+        padding-left: 7rem;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            margin: 10px;
+            border-style: solid;
+            border-color: gray;
+        }
+        .content{
+           
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+        .container{
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        grid-template-rows: auto auto;
+        justify-content: center;
+        
+        }
+        .box img{
+            width: 100%;
+        }
+        content h1{
+            
+            text-align:center
+            ;
+        }
+        .container p{
+            text-align: center;
+        }
+        @media screen and (max-width:992px){
+            .container{
+                grid-template-columns: 20% 20% 20%;
+                justify-content: space-between;
+            }
+        }
+        @media screen and (max-width: 600px){
+            .container{
+                grid-template-columns: 20% 20%;
+                justify-content: space-around;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1 class="menu">
+            Start Bootstrap
+        </h1>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Shop</li>
+        </ul>
+    </nav>
+    <header>
+        <div class="header">
+            <h1 class="h1">Shop in Style</h1>
+            <h3 class="h3">With this shop hompeage template</h3>
+        
+        </div>
+    </header>
+    <section class="content">
+        <div class="container">
+            <div class="box">
+                <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt=""
+                >
+                <h1 >Products</h1>
+                <p>Costs</p>
+            </div>
+            <div class="box">
+                <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt=""
+                >
+                <h1>Products</h1>
+                <p>Costs</p>
+            </div>
+            <div class="box">
+                <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt=""
+                >
+                <h1>Products</h1>
+                <p>Costs</p>
+            </div>
+            <div class="box">
+                <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt=""
+                >
+                <h1>Products</h1>
+                <p>Costs</p>
+            </div>
+            <div class="box">
+                <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt=""
+                >
+                <h1>Products</h1>
+                <p>Costs</p>
+            </div>
+            <div class="box">
+                <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt=""
+                >
+                <h1>Products</h1>
+                <p>Costs</p>
+            </div>
+            <div class="box">
+                <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt=""
+                >
+                <h1>Products</h1>
+                <p>Costs</p>
+            </div>
+            <div class="box">
+                <img src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt=""
+                >
+                <h1>Products</h1>
+                <p>Costs</p>
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+</html>

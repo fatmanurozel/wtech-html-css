@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            font-family: 'Barlow';
+        }
+
+        body {
+            margin: 0px;
+        }
+
+        h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            height: 56px;
+            display: flex;
+            padding: 0px 5% 0px 5%;
+            align-items: center;
+            background-color: black;
+            color: white;
+            justify-content: space-around;
+        }
+
+        ul {
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            list-style-type: none;
+        }
+
+        ul li {
+            cursor: pointer;
+            padding-left: 20px;
+        }
+
+        .header2 {
+            height: 400px;
+            background-color: #F8F9FA;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin-left: 104px;
+            margin-right: 104px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 25px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 50px;
+            margin-top: 100px;
+
+        
+        }
+
+        a {
+            border-style: solid;
+            background-color: #0D6EFD;
+            color: white;
+        }
+
+        .container {
+            padding: 0px 8%;
+            display: grid;
+        }
+        .containergrid
+        {
+            grid-template-columns: 45% 45%;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            margin-top: 3rem;
+        }
+        .box{
+            border: 1px solid rgba(0, 0, 0, 0.125);
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border-radius: 0.25rem;
+            position: relative;
+            background-color: #F8F9FA;
+        }
+        .i{
+            height: 5px;
+            width: 5px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <h3>Start Bootstrap</h3>
+
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Menu</li>
+        </ul>
+        
+    </nav>
+    <header>
+        <div class="header2">
+            <div class="header1">
+                <div class="header">
+                    
+                    <h1 class="header"> A warm welcome!</h1>
+                    <p class="header">Bootstrap utility classes are used to create this jumbotron since the old
+                        component has been removed from the framework. Why create custom CSS when you can use utilities?
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container containergrid">
+        <div class="box">
+
+            <h2>Fresh new layout</h2>
+            <p>With Bootstrap 5, we've created a fresh new layout for this template!</p>
+        
+        </div>
+
+        <div class="box">
+            <h2>Free to download</h2>
+            <p>As always, Start Bootstrap has a powerful collectin of free templates.</p>
+        </div>
+        <div class="box">
+            <h2>Jumbotron hero header</h2>
+            <p>The heroic part of this template is the jumbotron hero header!</p>
+        </div>
+        <div class="box">
+            <h2>Feature boxes</h2>
+            <p>We've created some custom feature boxes using Bootstrap icons!</p>
+        </div>
+        <div class="box">
+            <h2>
+                Simple clean code</h2>
+            <p>We keep our dependencies up to date and squash bugs as they come!</p>
+        </div>
+        <div class="box">
+            <h2>A name you trust</h2>
+            <p>Start Bootstrap has been the leader in free Bootstrap templates since 2013!</p>
+        </div>
+
+    </div>
+</body>
+
+</html>
