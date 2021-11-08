@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="name">
+    <button onclick="calc()">Calc</button>
+    <button onclick="calc2()">Calc-2</button>
+    <button onclick="calc3()">Calc-3</button>
+</body>
+</html>
+<script>
+    // Ekrana girilen inputtaki değerin kendisiyle toplamını konsola yazdır:
+    function calc2(){
+    var data = document.getElementById("name").value;
+    var result= Number(data) + Number(data);
+    console.log(result);
+    }
+
+    // Ekrana girilen input 100den büyükse konsola "100den büyük bir sayı girdiniz" yazsın.
+
+    function calc3(){
+        var data = document.getElementById("name").value;
+        if(Number(data)>100){
+            console.log("100 den büyük bir sayı girdiniz.");
+        }
+    }
+</script>

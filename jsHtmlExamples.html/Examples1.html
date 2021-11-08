@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Ekrana bir input bir buton koy butona tıkladığında input a girilen değerin karesini console a yazsın. -->
+    <input type="text" name="" id="name">
+    <button onclick="calc1()">Calc-1</button>
+    <hr>
+    <input type="text" name="" id="in1">
+    <input type="text" name="" id="in2">
+    <button onclick="calc2()">Calc-2</button>
+    <br>
+    <span id="result">0</span>
+    
+<hr>
+    <input type="text" name="" id="in3">
+    <button onclick="calc3()">Calc-3</button>
+    <hr>
+    <input type="text" name="" id="in4">
+    <button onclick="calc4()">Calc-4</button>
+<hr>
+    <input type="text" name="" id="in5">
+    <button onclick="calc5()">Calc-5</button>
+    <p id="res">...</p>
+    
+</body>
+</html>
+<script>
+    function calc1(){
+        var data = document.getElementById("name").value;
+        var result= Number(data) * Number(data);
+        console.log(result);
+    }
+  //Ekrana iki input bir buton koy. Butona tıkladığında inputtaki değerleri toplayıp bir span a yazsın ( numeric olarak)
+    function calc2(){
+        var value1 = document.getElementById("in1").value;
+        var value2 = document.getElementById("in2").value;
+        var z = Number(value1) + Number(value2)
+        document.getElementById('result').innerHTML = z
+    }
+    
+    //3) Ekrana bir input bir buton koy. Butona tıkladığında inputtaki değerin %18 ini console a yazsın
+
+    function calc3(){
+        var data=document.getElementById("in3").value;
+        var result3 = Number(data) * 0.18;
+        console.log(result3);
+    }
+
+    //4)Ekrana bir input bir buton koy. Butona tıkladığında inputtaki değer 100 den büyükse %18 değilse %8 den KDV sini hesaplayıp KDV li fiyatı console a yazsın.
+
+    function calc4(){
+        var data=document.getElementById("in4").value;
+
+        if(Number(data)>100){
+        var result4= Number(data)*0.18;
+        console.log(result4);
+        }
+        else{
+            var result5=Number(data)*0.08;
+            console.log(result5);
+        }
+    }
+
+    //5) Ekrana bir input bir p bir de buton koy. Butona tıkladığında input a girilen metni p içerisine yazdırsın
+     
+    
+function calc5(){
+    var x = document.getElementById('in5').value;
+    document.getElementById("res").innerHTML = x;
+}
+</script>

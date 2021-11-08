@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="not">
+    <button onclick="calc()">Calc</button>
+</body>
+</html>
+<!-- //Dışarıdan öğrenci notu girilsin. 0-45 ise "kaldınız", 45-55 ise "paçayı yırttın", 55-70 ise "akmasa da damlıyor", 70-85 arasında "iyi", 85-100 arasında "hocam benim 2 puanı nereden kırdınız" -->
+<script>
+function calc(){
+
+let puan = document.getElementById('not').value;
+if(puan>=0 && puan<45){
+    console.log("Kaldınız.");
+}
+else if(puan>=45 && puan<55){
+    console.log("Paçayı yırttın.");
+}
+else if(puan>=55 && puan<70){
+    console.log("Akmasa da damlıyor.");
+}
+else if(puan>=70 && puan<85){
+    console.log("İyi.");
+}
+else if(puan>=85 && puan<100){
+    console.log("Hocam benim 2 puanı nereden kırdınız." );
+}
+else{
+    console.log("Böyle bir not yok.");
+}
+}
+
+
+
+</script>

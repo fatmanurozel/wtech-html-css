@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- //9) Ekrana bir input iki tane buton ve bir div koy. Birinci butona bastığında div i sola ikinci butona bastığında sağa kaydır. Kaydırılacak px inputtan alınacak. Örneğin input a 100 girerse 100px sağ veya sola gidecek -->
+    <div class="dokuz" style="position: relative;left: 0px;">
+        <p>Soru 9</p>
+        <input type="text" name="" id="kaydır">
+        <button onclick="goLeft()"> Sola Kaydır </button>
+        <button onclick="goRight()"> Sağa Kaydır </button>
+        <div id="kutu" style="width: 100px; height: 100px; position: absolute; border-style: solid; left: 0px;"></div>
+
+    </div>
+</body>
+</html>
+<script>
+    var x = 0;
+   function goRight(){
+
+       let z = document.getElementById('kaydır').value;
+       x = x + Number(z);
+       document.getElementById('kutu').style.left = x + 'px'  ; 
+
+   }
+   function goLeft(){
+
+       let z = document.getElementById('kaydır').value;
+       x = x - Number(z);
+       document.getElementById('kutu').style.left = x + 'px' ;
+   }
+</script>

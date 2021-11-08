@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Ekrana 5 image at resimli, ve 1 buton koy, her tıkladığında resimler 1-100arası sağa kaysın -->
+    <style>
+       
+        img{
+            height: 200px; 
+            width: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column;">
+    <img src="https://vetrehberi.com/wp-content/uploads/2018/11/akhal-teke-at-irki.jpg" alt="">
+    <hr>
+    <img src="https://vetrehberi.com/wp-content/uploads/2018/11/akhal-teke-at-irki.jpg" alt="">
+    <hr>
+    <img src="https://vetrehberi.com/wp-content/uploads/2018/11/akhal-teke-at-irki.jpg" alt="">
+    <hr>
+    <img src="https://vetrehberi.com/wp-content/uploads/2018/11/akhal-teke-at-irki.jpg" alt="">  
+    <hr>
+    <img src="https://vetrehberi.com/wp-content/uploads/2018/11/akhal-teke-at-irki.jpg" alt="">
+    </div>
+    <hr>
+    <button onclick="run()">Deh!</button>
+   
+</body>
+
+<script>
+     var atLeft=[0,0,0,0,0];
+    function run(){
+       
+        for (i=0; i<5; i++){
+            var randomNumber= Math.floor(Math.random() * 100);
+           atLeft[i]= atLeft[i]+randomNumber;
+           document.getElementsByTagName('img')[i].style.marginLeft = atLeft[i] + "px";
+        }
+        
+        
+        
+    }
+</script>
+</html>

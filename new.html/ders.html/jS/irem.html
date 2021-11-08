@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+        }
+
+        #box2 {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: absolute;
+        }
+
+        #box3 {
+            width: 200px;
+            height: 200px;
+            background-color: purple;
+            position: absolute;
+        }
+
+        #box4 {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <label id="point" style="font-size: 60px;">0</label>
+    
+
+        <div id='box' onclick="catchDiv()"></div>
+        <div id="box2" onclick="catchDiv2()"></div>
+        <div id="box3" onclick="catchDiv2()"></div>
+        <div id="box4" onclick="catchDiv2()"></div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    var runInterval = setInterval(runBoxrun, 1000)
+
+    function runBoxrun() {
+        if (point < 0) {
+        console.log("Puanınız eksiye düştü!") }
+
+        var randomX = Math.floor(Math.random() * screen.width);
+        var randomY = Math.floor(Math.random() * screen.height);
+
+        var randomX2 = Math.floor(Math.random() * screen.width);
+        var randomY2 = Math.floor(Math.random() * screen.height);
+        
+        var randomX3 = Math.floor(Math.random() * screen.width);
+        var randomY3 = Math.floor(Math.random() * screen.height);
+
+        var randomX4 = Math.floor(Math.random() * screen.width);
+        var randomY4 = Math.floor(Math.random() * screen.height);
+
+        document.getElementById('box').style.left = randomX + 'px';
+        document.getElementById('box').style.top = randomY + "px";
+
+        document.getElementById('box2').style.left = randomX2 + 'px';
+        document.getElementById('box2').style.top = randomY2 + "px";
+
+        document.getElementById('box3').style.left = randomX3 + 'px';
+        document.getElementById('box3').style.top = randomY3 + "px";
+
+        document.getElementById('box4').style.left = randomX4 + 'px';
+        document.getElementById('box4').style.top = randomY4 + "px";
+
+    }
+    var point = 0;
+
+    function catchDiv() {
+        point = point + 10;
+
+        document.getElementById('point').innerHTML = point
+    }
+
+    function catchDiv2() {
+        point = point - 10;
+
+        document.getElementById('point').innerHTML = point
+    }
+
+    
+</script>
