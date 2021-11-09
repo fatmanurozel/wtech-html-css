@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- 1) Ekrana bir input bir buton koy. Butona tıkladığında inputtan aldığı değer kadar button u ekrana eklesin -->
+</head>
+<body>
+    <input type="text" name="" id="x">
+    <button onclick="add()">Add</button>
+</body>
+</html>
+<script>
+    function add() {
+
+//Bu fonksiyon çalıştığında x tane buton eklenecek
+        var z= document.getElementById("x").value;
+for (i = 0; i < z; i++) {
+    var newButton = document.createElement("button");
+    newButton.innerHTML = "Click!"
+    document.body.appendChild(newButton)
+}
+    }
+
+</script>
