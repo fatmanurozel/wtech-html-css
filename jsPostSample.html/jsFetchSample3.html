@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Userları çek. ad ve soyadını li içerisine büyük harflerle yanyana yazdır -->
+</head>
+<body>
+    <ul id= 'customersName'>
+
+    </ul>
+</body>
+</html>
+<script>
+    fetch("https://jsonplaceholder.typicode.com/users")
+    .then((res) => res.json())
+    .then((data) => {
+       data.forEach(item => {
+
+        var liElement = document.createElement("li");
+        liElement.innerHTML=item.name.toUpperCase() + "-" + item.username.toUpperCase()
+        document.body.appendChild(liElement)
+       })
+    })
+    .catch((err) => {
+        console.log("Hata var...",err);
+    })
+
+
+</script>

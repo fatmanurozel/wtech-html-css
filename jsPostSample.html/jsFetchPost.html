@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="">id</label>
+        <input type="text" name="" id="id">
+    </div>
+
+    <div>
+        <label for="">Description</label>
+        <input type="text" name="" id="description">
+    </div>
+
+    <div>
+        <label for="">name</label>
+        <input type="text" name="" id="name">
+    </div>
+
+    <div>
+        <button onclick="add()">Add</button>
+    </div>
+</body>
+
+</html>
+<script>
+    var add = () => {
+
+        var newCat = new Object();
+        newCat.id = document.getElementById('id').value;
+        newCat.description = document.getElementById('description').value;
+        newCat.name = document.getElementById('name').value;
+
+        var requestOptions = {
+
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newCat)
+        }
+        fetch("https://northwind.vercel.app/api/categories", requestOptions)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                alert("Bilgiler başarıyla eklendi!!")
+            })
+    }
+
+
+</script>

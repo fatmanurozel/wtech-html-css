@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <label for="">Id</label>
+        <input type="text" name="" id="Id">
+    </div>
+    <div>
+        <label for="">Company Name</label>
+        <input type="text" name="" id="companyName">
+    </div>
+
+    <div>
+        <label for="">Contact Name</label>
+        <input type="text" name="" id="contactName">
+    </div>
+
+    <div>
+        <label for="">Contact Title</label>
+        <input type="text" name="" id="contactTitle">
+    </div>
+
+    <div>
+        <button onclick="add()">Add</button>
+    </div>
+</body>
+
+</html>
+<script>
+    var add = () => {
+    var newCust = new Object();
+    newCust.id = document.getElementById('Id').value;
+    newCust.companyName = document.getElementById('companyName').value;
+    newCust.contactName = document.getElementById('contactName').value;
+    newCust.contactTitle = document.getElementById('contactTitle').value;
+
+    var requestOptions = {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newCust)
+    }
+
+    fetch("https://northwind.vercel.app/api/customers", requestOptions)
+        .then((res) => res.json())
+        .then((data) => {
+            console.log(data);
+            alert("Bilgiler başarıyla eklendi!")
+        })
+
+    }
+</script>

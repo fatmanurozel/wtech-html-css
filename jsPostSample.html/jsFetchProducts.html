@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- //products sayması için span kondu. product ürünü için name,fiyat,adet bilgisi verildi. ürün eklemek için buton kondu. 
+    Select ile kategoriler oluşturuldu.-->
+
+    <select id="categories" onchange="changeCategories()">
+        <option>Seçiniz...</option>
+        <option value="-1">Hepsi</option>
+    </select>
+
+    <div id="categorie">
+
+    </div>
+
+    <hr>
+
+    <div>
+        <span>Products Count: </span>
+        <span id="productsCount">0</span>
+    </div>
+    <hr>
+
+    <div>
+        <label for="">Name</label>
+        <input type="text" name="" id="name">
+    </div>
+    <div>
+        <label for="">unitPrice</label>
+        <input type="text" name="" id="unitPrice">
+    </div>
+
+    <div>
+        <label for="">UnitsInStock</label>
+        <input type="text" name="" id="UnitsInStock">
+    </div>
+
+    <div>
+        <button onclick="add()">Add</button>
+    </div>
+
+    <hr>
+
+    <!-- //Kategori silmek ve listelemek için buton kondu. -->
+    <div>
+        <label for="">CategoryID</label>
+        <input type="text" name="" id="categoryId">
+    </div>
+    <div>
+        <button onclick="deleteCategory()">Delete</button>
+    </div>
+    <button onclick="getCategory()">Get Category</button>
+
+    <ul id="category">
+
+    </ul>
+
+
+</body>
+
+</html>
+<script>
+// Kategori isimleri alındı 'select içine'
+    fetch('https://northwind.vercel.app/api/products')
+        .then((res) => res.json())
+        .then((data) => {
+
+            data.map((item) => {
+
+                var optionElement = document.createElement('option');
+                optionElement.innerHTML = item.name;
+                optionElement.value = item.categoryId
+
+                document.getElementById('categories').appendChild(optionElement);
+
+
+            })
+
+        })
+        //Alınan isimler listenin içine yazıldı.
+    var changeCategories = () => {
+        var secilencat = document.getElementById('categories').value;
+        document.getElementById('categorie').innerHTML = ''
+
+        fetch("https://northwind.vercel.app/api/products")
+            .then((res) => res.json())
+            .then((data) => {
+
+                var catData = []
+
+                if (secilencat == -1) {
+                    catData = data
+                }
+                else {
+                    catData = data.filter(q => q.categoryId == secilencat)
+                }
+                catData.map((item) => {
+                    var liElement = document.createElement('li');
+                    liElement.innerHTML = item.name
+                    document.getElementById('categorie').appendChild(liElement)
+
+                }) // select işleminin içi dolduruldu.
+            })
+    }
+    const apiUrl = "https://northwind.vercel.app/api/products";
+
+    var getCategory = () => {
+
+        document.getElementById('category').innerHTML = ''
+
+        fetch(apiUrl)
+            .then((res) => res.json())
+            .then((data) => {
+                data.map((item) => {
+
+                    var liElement = document.createElement('li');
+                    liElement.innerHTML = item.name
+                    document.getElementById('category').appendChild(liElement);
+                })
+                document.getElementById('productsCount').innerHTML = data.length
+            }) //ürünün linki verildi,kategori sıfırlandı, li açıldı, içine item name yazıldı, listenin içine li yazıldı. counterın içine product boyutu yazıldı.
+    }
+    var add = () => {
+        var newCat = new Object();
+        newCat.name = document.getElementById('name').value;
+        newCat.unitPrice = document.getElementById('unitPrice').value;
+        newCat.unitPrice = document.getElementById('UnitsInStock').value;
+        // name,unitPrice,unitsinStok objeleri eklendi.   
+        var requestOptions = {
+            method: 'POST',
+            headers: {
+
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+
+            },
+            body: JSON.stringify(newCat)
+        }
+
+        fetch(apiUrl, requestOptions)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log('Kategori ekleme işlemi başarılı!');
+                getCategory()
+            }) // Post işlemi gerçekleştirildi.
+    }
+    var deleteCategory = () => {
+
+        var categoryId = document.getElementById('categoryId').value;
+
+        var requestOptions = {
+            method: 'DELETE',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'applicaiton/json'
+            }
+        }
+
+        fetch(apiUrl + "/" + categoryId, requestOptions)
+            .then((res) => res.json())
+            .then((data) => {
+                getCategory();
+            })
+    }//Delete işlemi gerçekleştirildi.
+
+</script>
