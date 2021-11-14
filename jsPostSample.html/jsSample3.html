@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./todos.js"></script>
+    <!-- 3) todoları bir dosyay at. completed false olan satırı kırmızı true olan satırı sarı olacak şekilde ul ye bas -->
+
+</head>
+
+<body>
+    <ul>
+
+    </ul>
+</body>
+
+</html>
+<script>
+
+    for (i = 0; i < todos.length; i++) {
+        var liElement = document.createElement('li');
+        liElement.innerHTML = todos[i].id + "-" + todos[i].completed;
+        document.body.appendChild(liElement);
+        if (todos[i].completed == true) {
+            liElement.style.color = 'yellow';
+        }
+        else {
+            liElement.style.color = 'red';
+        }
+
+    }
+        
+    
+
+
+
+
+
+</script>

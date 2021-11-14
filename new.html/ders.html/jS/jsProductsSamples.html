@@ -988,46 +988,49 @@
             }
         ]
 
-//soru1// var urun = products.filter(q => q.unitsInStock == '0')
+//soru1
+ var urun = products.filter(q => q.unitsInStock == '0')
 
-// console.log(urun);
+console.log(urun);
 
-//soru2// var urun = products.filter(q => q.unitsInStock != "0")
-// for(i=0; i<urun.length; i++){
-//     var liElement = document.createElement('li');
-//     liElement.innerHTML = urun[i].name;
-//     document.body.appendChild(liElement);
-//     console.log(urun.length);
-// }
+//soru2
+ var urun = products.filter(q => q.unitsInStock != "0")
+for(i=0; i<urun.length; i++){
+    var liElement = document.createElement('li');
+    liElement.innerHTML = urun[i].name;
+    document.body.appendChild(liElement);
+    console.log(urun.length);
+}
 
-// soru3// var urun = products.filter(q=> q.discontinued ==true)
-// console.log(urun.length);
+// soru3
+var urun = products.filter(q=> q.discontinued ==true)
+console.log(urun.length);
 
 //soru4 
 
-// var urun= products.filter(q=> q.unitPrice>'50' && q.unitsInStock != '0')
-// for (i=0; i<urun.length; i++){
+var urun= products.filter(q=> q.unitPrice>'50' && q.unitsInStock != '0')
+for (i=0; i<urun.length; i++){
 
-//     var liElement= document.createElement('li');
-//     liElement.innerHTML=urun[i].name;
-//     document.body.appendChild(liElement);
-//     console.log(urun.length);
-// }
+    var liElement= document.createElement('li');
+    liElement.innerHTML=urun[i].name;
+    document.body.appendChild(liElement);
+    console.log(urun.length);
+}
 
-//soru 5 // for(i=0; i< products.length;i++){
-//     var liElement= document.createElement('li');
-//     liElement.innerHTML=products[i].name;
-//     document.body.appendChild(liElement);
-//     if(products[i].unitsInStock=='0'){
-//         liElement.style.color= 'red';
+//soru 5 
+for(i=0; i< products.length;i++){
+    var liElement= document.createElement('li');
+    liElement.innerHTML=products[i].name;
+    document.body.appendChild(liElement);
+    if(products[i].unitsInStock=='0'){
+        liElement.style.color= 'red';
         
-//     }
+    }
 
-// }
+}
 
-//soru6 // var urun=products.find(q=> q.id == "8")
-// console.log(urun.name);
+//soru6 
+var urun=products.find(q=> q.id == "8")
+console.log(urun.name);
 
-
-
-// </script>
+</script>

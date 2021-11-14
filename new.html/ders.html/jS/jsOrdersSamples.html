@@ -29551,15 +29551,22 @@
                 ]
             }
         ]
-    //soru 1 //  var urun= orders.filter(q => q.freight >= 5 && q.shipAddress.country != 'Brazil')  ;    
+    //soru1  
+    var urun= orders.filter(q => q.freight >= 5 && q.shipAddress.country != 'Brazil')  ;    
 
-    //  console.log(urun.length);
+     console.log(urun.length);
 
-    //soru 2//  var urun= orders.filter(q=> q.shipAddress.country =='France')  
+    //soru 2
+      var urun= orders.filter(q=> q.shipAddress.country =='France')  
+
+    console.log(urun);
+
+    //soru 3 
+    var urun= orders.filter(q => q.details.length >=2  )  ;
+    console.log(urun.length);
+
    
-    // console.log(urun);
-          
-    // soru 3 //var urun= orders.filter(q => q.details.length >=2  )  ;
-    // console.log(urun.length);
-     
+
+
+
 </script>
